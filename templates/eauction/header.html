@@ -1,8 +1,8 @@
 {% load static %}
 {% block content %}
-<header>
+<header class="sticky-top bg-light">
   <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
-    <div class="container-fluid px-5">
+    <div class="container-lg">
       <img src="{% static 'eauction/img/logo.svg' %}" alt="Logo" width="50" height="50" class="me-3">
       <!-- Adjust the size as needed -->
       <a class="navbar-brand" href="#">Elite EAuction</a>
@@ -21,10 +21,10 @@
             <a class="nav-link" href="#">Auctions</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Upcoming Auctions</a>
+            <a class="nav-link" href="#">Latest Auctions</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">About</a>
+            <a class="nav-link" href="#">Contact Us</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true"

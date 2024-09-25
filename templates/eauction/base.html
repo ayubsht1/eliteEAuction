@@ -12,14 +12,84 @@
                  
     <!-- Add this in the <head> section to include Font Awesome -->
     <link rel="stylesheet" href="{% static 'eauction/css/all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'eauction/css/flex-fill.css' %}">
     <link rel="stylesheet" href="{% static 'eauction/css/includeFonts.css' %}">
+
+     <link rel="stylesheet" href="{% static 'eauction/css/tiny-slider.css' %}" />
+
+    <!--====== Line Icons CSS ======-->
+    <link rel="stylesheet" href="{% static 'eauction/css/LineIcons.css' %}" />
+
+    <!--====== Material Design Icons CSS ======-->
+    <link rel="stylesheet" href="{% static 'eauction/css/materialdesignicons.min.css' %}" />
+
+    <!--====== Bootstrap CSS ======-->
+    <link rel="stylesheet" href="{% static 'eauction/css/bootstrap.min.css' %}" />
+
+    <!--====== gLightBox CSS ======-->
+    <link rel="stylesheet" href="{% static 'eauction/css/glightbox.min.css' %}" />
+
+    <!--====== nouiSlider CSS ======-->
+    <link rel="stylesheet" href="{% static 'eauction/css/nouislider.min.css' %}" />
+
+    <!--====== Default CSS ======-->
+    <link rel="stylesheet" href="{% static 'eauction/css/default.css' %}" />
+
+    <!--====== Style CSS ======-->
+    <link rel="stylesheet" href="{% static 'eauction/css/style.css' %}" />
     </head>
-  <body>
+  <body class="d-flex flex-column min-vh-100">
+  <div class="flex-fill">
+
     {% include "eauction/header.html" %}
     {% block content %}
     
     {% endblock content %}
+  </div>
+    {% include "eauction/footer.html" %}
     <!-- Java script codes -->
     <script src="{% static 'eauction/js/bootstrap.bundle.min.js' %}"></script>
+    <script>
+      let currentIndex = 0; // Track the current index of the auction items
+      const itemsPerPage = 3; // Number of items to display per page
+      const auctionItems = document.querySelectorAll('.auction-item'); // Select all auction items
+    
+      // Function to update the visibility of auction items
+      function updateAuctionDisplay() {
+        auctionItems.forEach((item, index) => {
+          // Show items within the current range
+          if (index >= currentIndex && index < currentIndex + itemsPerPage) {
+            item.style.display = 'block';
+          } else {
+            item.style.display = 'none';
+          }
+        });
+    
+        // Disable the Previous button if on the first page
+        document.getElementById('prevButton').disabled = currentIndex === 0;
+    
+        // Disable the Next button if there are no more items to show
+        document.getElementById('nextButton').disabled = currentIndex + itemsPerPage >= auctionItems.length;
+      }
+    
+      // Event listeners for the buttons
+      document.getElementById('prevButton').addEventListener('click', () => {
+        if (currentIndex > 0) {
+          currentIndex -= itemsPerPage;
+          updateAuctionDisplay();
+        }
+      });
+    
+      document.getElementById('nextButton').addEventListener('click', () => {
+        if (currentIndex + itemsPerPage < auctionItems.length) {
+          currentIndex += itemsPerPage;
+          updateAuctionDisplay();
+        }
+      });
+    
+      // Initial display
+      updateAuctionDisplay();
+    </script>
+    
   </body>
 </html>
