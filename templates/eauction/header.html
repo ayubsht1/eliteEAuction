@@ -5,7 +5,7 @@
     <div class="container-lg">
       <img src="{% static 'eauction/img/logo.svg' %}" alt="Logo" width="50" height="50" class="me-3">
       <!-- Adjust the size as needed -->
-      <a class="navbar-brand" href="#">Elite EAuction</a>
+      <a class="navbar-brand" href="/">Elite EAuction</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01"
         aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -13,29 +13,21 @@
       <div class="collapse navbar-collapse" id="navbarColor01">
         <ul class="navbar-nav me-auto">
           <li class="nav-item">
-            <a class="nav-link active" href="#">Home
+            <a class="nav-link active" href="/">Home
               <span class="visually-hidden">(current)</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Auctions</a>
+            <a class="nav-link" href="{% url 'auction-list' %}">Auctions</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Latest Auctions</a>
+            <a class="nav-link" href="{% url 'sell-items' %}">Sell items</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Contact Us</a>
+            <a class="nav-link" href="{% url 'watch-list' %}">Watch list</a>
           </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true"
-              aria-expanded="false">Categories</a>
-            <div class="dropdown-menu">
-              <a class="dropdown-item" href="#">Art</a>
-              <a class="dropdown-item" href="#">Collectables</a>
-              <a class="dropdown-item" href="#">Watches and Jewellery</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">More</a>
-            </div>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'category' %}">Categories</a>
           </li>
         </ul>
         <ul class="navbar-nav ms-auto">
@@ -47,6 +39,9 @@
               </button>
             </form>
           </li>
+          <li class="nav-item"></li>
+            <a class="nav-link" href="#">Login / Register</a> 
+          </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="profileDropdown" role="button" data-bs-toggle="dropdown"
               aria-expanded="false">
@@ -54,7 +49,6 @@
             </a>
             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown">
               <li><a class="dropdown-item" href="#">Profile</a></li>
-              <li><a class="dropdown-item" href="#">Login</a></li>
               <li><a class="dropdown-item" href="#">Logout</a></li>
             </ul>
           </li>
