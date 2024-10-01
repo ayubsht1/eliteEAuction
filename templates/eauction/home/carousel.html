@@ -1,0 +1,67 @@
+{% load static %}
+<div>
+    <div id="myCarousel" class="carousel slide mb-6" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2" class="active"
+          aria-current="true"></button>
+        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3" class=""></button>
+      </div>
+
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="{% static 'eauction/img/auction1.jpg' %}" class="d-block w-100 fixed-size" alt="First slide">
+          <div class="container">
+            <div class="carousel-caption dark text-start">
+              <h1>Welcome to Elite EAuction.</h1>
+              <p> Discover a treasure trove of exclusive auction items, where value
+                meets excitement.
+                With us, you can have access to a number of desired products selected with due care
+                to let you
+                make the best deals. Whether you wish to place a bid for rare collectibles or a few
+                lines of
+                groceries, find very unique opportunities to win at prices unmatched.</p>
+              <p><a class="btn btn-lg btn-primary" href="#">Sign up today</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="{% static 'eauction/img/auctionconcept.jpg' %}" class="d-block w-100 fixed-size" alt="Second slide">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Join Our Exciting Auctions!</h1>
+              <p>Discover amazing deals and unique items by visiting our auctions! Our platform offers a wide range of
+                products, from exquisite art pieces to essential everyday items. Each auction provides an opportunity to
+                bid on items you love while enjoying a fun and competitive atmosphere. Don’t miss out on your chance to
+                find that perfect item—explore our current auctions today and start bidding!
+              </p>
+              <p><a class="btn btn-lg btn-primary" href="#">View Auctions</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="{% static 'eauction/img/contact.jpg' %}" class="d-block w-100 fixed-size" alt="Third slide">
+          <div class="container">
+            <div class="carousel-caption text-end">
+              <h1>Contact Us</h1>
+              <p>For any queries, comments, or assistance of any kind, please feel free to get in touch with us. Our
+                staff is dedicated to serving you.<br> You can reach us via email, phone, or through our contact form.
+                We
+                look forward to hearing from you and serving you in any way we can!
+              </p>
+              <p><a class="btn btn-lg btn-primary" href="#">Contact</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
